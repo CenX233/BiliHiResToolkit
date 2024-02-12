@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<svg width="256" height="256" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
+ <defs>
+  <linearGradient fx="0.25" fy="0.25" id="svg_4" spreadMethod="pad" x1="0" x2="0.5" y1="0" y2="0.5">
+   <stop id="jq_stop_3764" offset="0" stop-color="#fbe555" stop-opacity="1"/>
+   <stop id="jq_stop_7430" offset="1" stop-color="#fb9224" stop-opacity="1"/>
+  </linearGradient>
+ </defs>
+ <g class="layer">
+  <title>Layer 1</title>
+  <rect fill="url(#svg_4)" height="256" id="svg_7" stroke="#000000" stroke-width="0" width="256" x="0" y="0"/>
+  <path d="m48,16l192,0l0,224l-224,0l0,-192l32,-32z" fill="#2b2b2b" id="svg_5" stroke="#000000" stroke-width="0" transform="matrix(1 0 0 1 0 0)"/>
+  <text fill="#eaeaea" font-family="Helvetica" font-size="102" font-style="italic" font-weight="bold" id="svg_6" stroke="#d6d6d6" stroke-width="0" text-anchor="middle" x="111.71" xml:space="preserve" y="119.1">BT</text>
+  <path d="m160.47,184.5l-28.47,-28.5l18.75,0l28.47,28.5l-28.47,28.5l-18.75,0l28.47,-28.5z" fill="#eaeaea" id="svg_10" stroke="#d6d6d6" stroke-width="0"/>
+  <rect fill="#eaeaea" height="13" id="svg_15" stroke="#d6d6d6" stroke-width="0" width="47" x="48.5" y="156"/>
+  <rect fill="#eaeaea" height="13" id="svg_16" stroke="#d6d6d6" stroke-width="0" width="47" x="48.5" y="200"/>
+  <path d="m107.97,184.5l-28.47,-28.5l18.75,0l28.47,28.5l-28.47,28.5l-18.75,0l28.47,-28.5z" fill="#eaeaea" id="svg_17" stroke="#d6d6d6" stroke-width="0"/>
+  <rect fill="#eaeaea" height="26" id="svg_18" stroke="#d6d6d6" stroke-width="0" width="47" x="113.5" y="171.5"/>
+ </g>
+</svg>
