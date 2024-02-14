@@ -38,6 +38,9 @@ public class SocketProgressListener extends Thread {
         return url;
     }
 
+    /**
+     * 启动Socket server
+     */
     @Override
     public void run() {
         try {
@@ -64,7 +67,6 @@ public class SocketProgressListener extends Thread {
                     int nByte = socket.getInputStream().read(bytes);
                     String msg = new String(bytes);
 
-//                    log.info(String.valueOf(nByte));
                     if (nByte > 0) {
                         String[] items = msg.split("\n");
                         HashMap<String, String> progress = new HashMap<>();
