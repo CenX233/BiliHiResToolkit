@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 public class SocketProgressListenerTest {
     @Test
-    public void testSocketProgressHandler() throws InterruptedException, IOException {
+    public void testSocketProgressHandler() throws InterruptedException {
         SocketProgressListener listener = new SocketProgressListener();
         listener.setHandler(
                 new ProgressHandler() {

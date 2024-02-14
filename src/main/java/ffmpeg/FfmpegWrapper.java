@@ -46,7 +46,7 @@ public class FfmpegWrapper {
     @NotNull
     private FixedPumpStreamHandler getFixedPumpStreamHandler() throws IOException {
         PipedInputStream is = new PipedInputStream(os);
-        FixedPumpStreamHandler psh = new FixedPumpStreamHandler(
+        return new FixedPumpStreamHandler(
                 /* output */
                 new LogOutputStream() {
                     @Override
@@ -63,7 +63,6 @@ public class FfmpegWrapper {
                 },
                 is
         );
-        return psh;
     }
 
     public void setProgressHandler(ProgressHandler handler) {
