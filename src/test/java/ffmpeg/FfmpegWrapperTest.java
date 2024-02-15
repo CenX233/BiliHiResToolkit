@@ -45,7 +45,7 @@ public class FfmpegWrapperTest {
         ffmpeg.setProgressHandler(progressHandler);
 
         ffmpeg.addArgument("-version");
-        ffmpeg.run(handler);
+        ffmpeg.run();
         Thread.sleep(1000);
 //        ffmpeg.stop();
 //        Thread.sleep(100);
@@ -55,8 +55,8 @@ public class FfmpegWrapperTest {
 
         ffmpeg.addArgument("-hide_banner");
         ffmpeg.addArgument("-y");
-        ffmpeg.addArgument("-t");
-        ffmpeg.addArgument("3");
+//        ffmpeg.addArgument("-t");
+//        ffmpeg.addArgument("3");
         ffmpeg.addArgument("-f");
         ffmpeg.addArgument("gdigrab");
         ffmpeg.addArgument("-framerate");
@@ -66,7 +66,7 @@ public class FfmpegWrapperTest {
         ffmpeg.addArgument("output.mp4");
         ffmpeg.run(handler);
         Thread.sleep(6000);
-//        ffmpeg.stop();
+        ffmpeg.stop();
 //        Thread.sleep(6000);
 
         assertTrue(result[0]);

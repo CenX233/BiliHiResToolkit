@@ -13,6 +13,7 @@ public class SocketProgressListener extends Thread {
     private static final Logger log = LoggerBuilder.getLogger("SocketServer");
     private ProgressHandler handler;
     private boolean destroyFlag = true;
+    private boolean connectFlag = false;
     private String url;
 
     public ProgressHandler getHandler() {
@@ -21,6 +22,13 @@ public class SocketProgressListener extends Thread {
 
     public void setHandler(ProgressHandler handler) {
         this.handler = handler;
+    }
+
+    /**
+     * 通知Socket server客户端已断开连接.
+     */
+    public void disconnect() {
+        this.connectFlag = false;
     }
 
     public void destroy() {
@@ -61,8 +69,9 @@ public class SocketProgressListener extends Thread {
 
             while (!destroyFlag) {
                 Socket socket = server.accept();
+                this.connectFlag = true;
                 log.info("收到来自 " + socket.getRemoteSocketAddress().toString() + " 的连接.");
-                while (!socket.isInputShutdown()) {
+                while (connectFlag && !socket.isInputShutdown()) {
                     byte[] bytes = new byte[socket.getInputStream().available()];
                     int nByte = socket.getInputStream().read(bytes);
                     String msg = new String(bytes);

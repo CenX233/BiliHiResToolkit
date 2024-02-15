@@ -13,25 +13,24 @@ public class FfmpegWrapper {
     private static CommandLine cmdLine;
     private DefaultExecutor executor;
     private static final Logger log = LoggerBuilder.getLogger("FFmpeg");
-    private PipedOutputStream os = new PipedOutputStream();
+    private final PipedOutputStream os = new PipedOutputStream();
     private final PipedInputStream is = new PipedInputStream();
     private static File ffmpegPath = new File(".\\ffmpeg\\");
-    private final SocketProgressListener listener = new SocketProgressListener();
+    private static final SocketProgressListener listener = new SocketProgressListener();
 
     /**
      * 初始化socket进度监听服务器.
      */
     public FfmpegWrapper() {
         try {
-            this.os = new PipedOutputStream();
-            FixedPumpStreamHandler psh = getFixedPumpStreamHandler();
-
             executor = DefaultExecutor.builder()
-                    .setExecuteStreamHandler(psh).get();
+                    .setExecuteStreamHandler(getFixedPumpStreamHandler()).get();
             executor.getStreamHandler().setProcessInputStream(this.os);
-            listener.start();
-            synchronized (listener) {
-                listener.wait();
+            if (!listener.isAlive()) {
+                listener.start();
+                synchronized (listener) {
+                    listener.wait();
+                }
             }
         } catch (InterruptedException | IOException e) {
             log.log(Level.SEVERE, e.getMessage(), e);
@@ -118,11 +117,9 @@ public class FfmpegWrapper {
                 os.write('q');
                 os.flush();
                 os.close();
-//                resultHandler.onProcessComplete(-1);
             } catch (IOException e) {
                 log.log(Level.SEVERE, "无法发送关闭命令,将强制结束ffmpeg进程.", e);
                 executor.getWatchdog().destroyProcess();
-//                resultHandler.onProcessFailed(new ExecuteException("killed", -1));
             }
         }
     }
@@ -143,9 +140,11 @@ public class FfmpegWrapper {
     public void run(ExecuteResultHandler resultHandler) throws IOException {
         log.info("Run ffmpeg with args:" + cmdLine);
         executor.execute(cmdLine, resultHandler);
+        listener.disconnect();
     }
 
     public void run() throws IOException {
         executor.execute(cmdLine);
+        listener.disconnect();
     }
 }
