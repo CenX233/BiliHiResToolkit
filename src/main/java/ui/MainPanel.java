@@ -1,6 +1,7 @@
 package ui;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 /**
@@ -12,6 +13,7 @@ public class MainPanel extends JPanel {
         this.setLayout(layout);
 
         FilesPanel filesPanel = new FilesPanel();
+        filesPanel.setBorder(new EmptyBorder(2, 8, 0, 0));
         this.add(BorderLayout.CENTER, filesPanel);
 
         ConfigPanel configPanel = new ConfigPanel();
