@@ -71,11 +71,7 @@ public class CollapsePane extends JPanel {
             this.remove(this.panel);
         }
         if (panel != null) {
-            if (this.isCollapsed()) {
-                panel.setVisible(false);
-            } else {
-                panel.setVisible(true);
-            }
+            panel.setVisible(!this.isCollapsed());
             this.panel = panel;
             this.add(BorderLayout.CENTER, this.panel);
         }
