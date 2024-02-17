@@ -37,9 +37,16 @@ public class FilesPanel extends JPanel {
 
         /* 视频源文件选择按钮 */
         FlatButton button1 = new FlatButton();
-//        button1.setText("选择");
         button1.setIcon(UIManager.getIcon("FileView.directoryIcon"));
+        button1.setToolTipText("从文件中选择");
         this.add(button1);
+
+        /* 视频源文件信息按钮 */
+        FlatButton button4 = new FlatButton();
+        button4.setText("!");
+        button4.setToolTipText("查看源视频编码信息");
+        button4.putClientProperty( "FlatLaf.style", "font: $h4.font" );
+        this.add(button4);
 
         /* “编码”文本 */
         FlatLabel label2 = new FlatLabel();
@@ -48,6 +55,7 @@ public class FilesPanel extends JPanel {
 
         /* 视频编码模式选择菜单 */
         EncodingComboBox comboBox1 = new EncodingComboBox(EncodeMode.COPY);
+        comboBox1.setToolTipText("选择视频重编码方式");
         this.add(comboBox1, new CC()
                 .wrap()
         );
@@ -66,7 +74,15 @@ public class FilesPanel extends JPanel {
         /* 音频源文件选择按钮 */
         FlatButton button2 = new FlatButton();
         button2.setIcon(UIManager.getIcon("FileView.directoryIcon"));
+        button2.setToolTipText("从文件中选择");
         this.add(button2);
+
+        /* 音频源文件信息按钮 */
+        FlatButton button5 = new FlatButton();
+        button5.setText("!");
+        button5.setToolTipText("查看源音频编码信息");
+        button5.putClientProperty( "FlatLaf.style", "font: $h4.font" );
+        this.add(button5);
 
         /* “编码”文本 */
         FlatLabel label4 = new FlatLabel();
@@ -75,6 +91,7 @@ public class FilesPanel extends JPanel {
 
         /* 音频编码模式选择菜单 */
         EncodingComboBox comboBox2 = new EncodingComboBox(EncodeMode.AUTO);
+        comboBox2.setToolTipText("选择音频重编码方式");
         this.add(comboBox2, new CC()
                 .wrap()
         );
@@ -88,12 +105,13 @@ public class FilesPanel extends JPanel {
         FlatTextField textField3 = new FlatTextField();
         this.add(textField3, new CC()
                 .width("100%")
-                .spanX(3)
+                .spanX(4)
         );
 
         /* 输出文件选择按钮 */
         FlatButton button3 = new FlatButton();
         button3.setIcon(UIManager.getIcon("FileView.directoryIcon"));
+        button3.setToolTipText("选择输出路径");
         this.add(button3);
     }
 }

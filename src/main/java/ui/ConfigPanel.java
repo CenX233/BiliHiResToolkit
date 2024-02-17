@@ -2,7 +2,6 @@ package ui;
 
 import com.formdev.flatlaf.extras.components.FlatTabbedPane;
 
-import javax.swing.*;
 import java.awt.*;
 
 /**
