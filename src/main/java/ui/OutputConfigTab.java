@@ -19,7 +19,7 @@ public class OutputConfigTab extends FlatScrollPane {
         this.setVerticalScrollBarPolicy(VERTICAL_SCROLLBAR_ALWAYS);
 
         CollapsePane collapsePane = new CollapsePane();
-        collapsePane.setText("编码器设置");
+        collapsePane.setText("封装格式设置");
         JPanel subPanel = new JPanel();
         JLabel label = new JLabel("test");
         subPanel.setBorder(new TitledBorder("Test border"));

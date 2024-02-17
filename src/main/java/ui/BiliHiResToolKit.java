@@ -12,7 +12,7 @@ public class BiliHiResToolKit {
         SwingUtilities.invokeLater(() -> {
             JFrame mainWindow = new JFrame("BiliHiResToolKit");
             mainWindow.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-            mainWindow.setSize(960, 480);
+            mainWindow.setSize(540, 720);
             mainWindow.setLocationRelativeTo(null);
             mainWindow.setResizable(false);
             mainWindow.setIconImage(

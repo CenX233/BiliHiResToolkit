@@ -16,6 +16,8 @@ dependencies {
 
     implementation("com.formdev:flatlaf:3.3")
     implementation("com.formdev:flatlaf-extras:3.3")
+    implementation("com.miglayout:miglayout-core:11.3")
+    implementation("com.miglayout:miglayout-swing:11.3")
 
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
