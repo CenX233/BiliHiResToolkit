@@ -1,6 +1,7 @@
-package ui;
+package ui.custom;
 
 import com.formdev.flatlaf.extras.components.FlatScrollPane;
+import ui.custom.CollapsePane;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;

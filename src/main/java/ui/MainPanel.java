@@ -2,6 +2,9 @@ package ui;
 
 import net.miginfocom.layout.CC;
 import net.miginfocom.swing.MigLayout;
+import ui.basic.FilesPanel;
+import ui.control.ControlBar;
+import ui.custom.ConfigPanel;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;

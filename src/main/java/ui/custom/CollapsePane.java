@@ -1,4 +1,4 @@
-package ui;
+package ui.custom;
 
 import com.formdev.flatlaf.extras.components.FlatButton;
 

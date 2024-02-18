@@ -1,4 +1,4 @@
-package ui;
+package ui.control;
 
 import com.formdev.flatlaf.extras.components.FlatLabel;
 import com.formdev.flatlaf.extras.components.FlatProgressBar;

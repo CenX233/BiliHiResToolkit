@@ -1,4 +1,4 @@
-package ui;
+package ui.basic;
 
 import com.formdev.flatlaf.extras.components.FlatButton;
 import com.formdev.flatlaf.extras.components.FlatComboBox;
@@ -6,6 +6,8 @@ import com.formdev.flatlaf.extras.components.FlatLabel;
 import com.formdev.flatlaf.extras.components.FlatTextField;
 import net.miginfocom.layout.CC;
 import net.miginfocom.swing.MigLayout;
+import ui.FileChooser;
+import ui.FileSelectMode;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;

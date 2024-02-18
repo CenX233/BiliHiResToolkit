@@ -1,11 +1,11 @@
-package ui;
+package ui.custom;
 
 import com.formdev.flatlaf.extras.components.FlatTabbedPane;
 
 import java.awt.*;
 
 /**
- * 高级选项区域
+ * 自定义选项区域
  */
 public class ConfigPanel extends FlatTabbedPane {
     public ConfigPanel() {
