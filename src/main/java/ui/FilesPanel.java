@@ -29,109 +29,109 @@ public class FilesPanel extends JPanel {
         this.setBorder(title);
 
         /* “视频源路径”文本 */
-        FlatLabel label1 = new FlatLabel();
-        label1.setText("视频源路径");
-        this.add(label1);
+        FlatLabel videoPathLabel = new FlatLabel();
+        videoPathLabel.setText("视频源路径");
+        this.add(videoPathLabel);
 
         /* 视频源路径输入框 */
-        FlatTextField textField1 = new FlatTextField();
-        this.add(textField1, new CC()
+        FlatTextField videoPathTextField = new FlatTextField();
+        this.add(videoPathTextField, new CC()
                 .width("100%")
         );
 
         /* 视频源文件选择按钮 */
-        FlatButton button1 = new FlatButton();
-        button1.setIcon(UIManager.getIcon("FileView.directoryIcon"));
-        button1.setToolTipText("从文件中选择");
-        button1.addActionListener(e -> {
+        FlatButton videoSelectButton = new FlatButton();
+        videoSelectButton.setIcon(UIManager.getIcon("FileView.directoryIcon"));
+        videoSelectButton.setToolTipText("从文件中选择");
+        videoSelectButton.addActionListener(e -> {
             if (fileChooser.showOpenDialog(Mode.OPEN_VIDEO) == JFileChooser.FILES_ONLY) {
-                textField1.setText(fileChooser.getSelectedFile().getAbsolutePath());
+                videoPathTextField.setText(fileChooser.getSelectedFile().getAbsolutePath());
             }
         });
-        this.add(button1);
+        this.add(videoSelectButton);
 
         /* 视频源文件信息按钮 */
-        FlatButton button4 = new FlatButton();
-        button4.setText("!");
-        button4.setToolTipText("查看源视频编码信息");
-        button4.putClientProperty( "FlatLaf.style", "font: $h4.font" );
-        this.add(button4);
+        FlatButton videoInfoButton = new FlatButton();
+        videoInfoButton.setText("!");
+        videoInfoButton.setToolTipText("查看源视频编码信息");
+        videoInfoButton.putClientProperty( "FlatLaf.style", "font: $h4.font" );
+        this.add(videoInfoButton);
 
         /* “编码”文本 */
-        FlatLabel label2 = new FlatLabel();
-        label2.setText("编码:");
-        this.add(label2);
+        FlatLabel videoEncodeLabel = new FlatLabel();
+        videoEncodeLabel.setText("编码:");
+        this.add(videoEncodeLabel);
 
         /* 视频编码模式选择菜单 */
-        EncodingComboBox comboBox1 = new EncodingComboBox(EncodeMode.COPY);
-        comboBox1.setToolTipText("选择视频重编码方式");
-        this.add(comboBox1, new CC()
+        EncodingComboBox videoEncodeModeComboBox = new EncodingComboBox(EncodeMode.COPY);
+        videoEncodeModeComboBox.setToolTipText("选择视频重编码方式");
+        this.add(videoEncodeModeComboBox, new CC()
                 .wrap()
         );
 
         /* “音频源路径”文本 */
-        FlatLabel label3 = new FlatLabel();
-        label3.setText("音频源路径");
-        this.add(label3);
+        FlatLabel audioPathLabel = new FlatLabel();
+        audioPathLabel.setText("音频源路径");
+        this.add(audioPathLabel);
 
         /* 音频源路径输入框 */
-        FlatTextField textField2 = new FlatTextField();
-        this.add(textField2, new CC()
+        FlatTextField audioPathTextField = new FlatTextField();
+        this.add(audioPathTextField, new CC()
                 .width("100%")
         );
 
         /* 音频源文件选择按钮 */
-        FlatButton button2 = new FlatButton();
-        button2.setIcon(UIManager.getIcon("FileView.directoryIcon"));
-        button2.setToolTipText("从文件中选择");
-        button2.addActionListener(e -> {
+        FlatButton audioPathSelectButton = new FlatButton();
+        audioPathSelectButton.setIcon(UIManager.getIcon("FileView.directoryIcon"));
+        audioPathSelectButton.setToolTipText("从文件中选择");
+        audioPathSelectButton.addActionListener(e -> {
             if (fileChooser.showOpenDialog(Mode.OPEN_AUDIO) == JFileChooser.FILES_ONLY) {
-                textField2.setText(fileChooser.getSelectedFile().getAbsolutePath());
+                audioPathTextField.setText(fileChooser.getSelectedFile().getAbsolutePath());
             }
         });
-        this.add(button2);
+        this.add(audioPathSelectButton);
 
         /* 音频源文件信息按钮 */
-        FlatButton button5 = new FlatButton();
-        button5.setText("!");
-        button5.setToolTipText("查看源音频编码信息");
-        button5.putClientProperty( "FlatLaf.style", "font: $h4.font" );
-        this.add(button5);
+        FlatButton audioInfoButton = new FlatButton();
+        audioInfoButton.setText("!");
+        audioInfoButton.setToolTipText("查看源音频编码信息");
+        audioInfoButton.putClientProperty( "FlatLaf.style", "font: $h4.font" );
+        this.add(audioInfoButton);
 
         /* “编码”文本 */
-        FlatLabel label4 = new FlatLabel();
-        label4.setText("编码:");
-        this.add(label4);
+        FlatLabel audioEncodeLabel = new FlatLabel();
+        audioEncodeLabel.setText("编码:");
+        this.add(audioEncodeLabel);
 
         /* 音频编码模式选择菜单 */
-        EncodingComboBox comboBox2 = new EncodingComboBox(EncodeMode.AUTO);
-        comboBox2.setToolTipText("选择音频重编码方式");
-        this.add(comboBox2, new CC()
+        EncodingComboBox audioEncodeModeComboBox = new EncodingComboBox(EncodeMode.AUTO);
+        audioEncodeModeComboBox.setToolTipText("选择音频重编码方式");
+        this.add(audioEncodeModeComboBox, new CC()
                 .wrap()
         );
 
         /* “输出路径”文本 */
-        FlatLabel label5 = new FlatLabel();
-        label5.setText("输出路径");
-        this.add(label5);
+        FlatLabel outputPathLabel = new FlatLabel();
+        outputPathLabel.setText("输出路径");
+        this.add(outputPathLabel);
 
         /* 输出路径输入框 */
-        FlatTextField textField3 = new FlatTextField();
-        this.add(textField3, new CC()
+        FlatTextField outputPathTextField = new FlatTextField();
+        this.add(outputPathTextField, new CC()
                 .width("100%")
                 .spanX(4)
         );
 
         /* 输出文件选择按钮 */
-        FlatButton button3 = new FlatButton();
-        button3.setIcon(UIManager.getIcon("FileView.directoryIcon"));
-        button3.setToolTipText("选择输出路径");
-        button3.addActionListener(e -> {
+        FlatButton outputPathSelectButton = new FlatButton();
+        outputPathSelectButton.setIcon(UIManager.getIcon("FileView.directoryIcon"));
+        outputPathSelectButton.setToolTipText("选择输出路径");
+        outputPathSelectButton.addActionListener(e -> {
             if (fileChooser.showSaveDialog(Mode.SAVE_VIDEO) == JFileChooser.FILES_ONLY) {
-                textField3.setText(fileChooser.getSelectedFile().getAbsolutePath());
+                outputPathTextField.setText(fileChooser.getSelectedFile().getAbsolutePath());
             }
         });
-        this.add(button3);
+        this.add(outputPathSelectButton);
     }
 }
 
