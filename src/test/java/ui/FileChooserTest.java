@@ -13,7 +13,7 @@ public class FileChooserTest {
     @Test
     public void testFileChooser() {
         FileChooser chooser = new FileChooser();
-        chooser.showOpenDialog();
-        chooser.showSaveDialog();
+        chooser.showOpenDialog(Mode.OPEN_VIDEO);
+        chooser.showSaveDialog(Mode.SAVE_VIDEO);
     }
 }

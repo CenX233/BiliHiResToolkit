@@ -1,6 +1,9 @@
 package ui;
 
-import com.formdev.flatlaf.extras.components.*;
+import com.formdev.flatlaf.extras.components.FlatButton;
+import com.formdev.flatlaf.extras.components.FlatComboBox;
+import com.formdev.flatlaf.extras.components.FlatLabel;
+import com.formdev.flatlaf.extras.components.FlatTextField;
 import net.miginfocom.layout.CC;
 import net.miginfocom.swing.MigLayout;
 
@@ -13,6 +16,7 @@ import javax.swing.border.TitledBorder;
 public class FilesPanel extends JPanel {
 
     public FilesPanel() {
+        FileChooser fileChooser = new FileChooser();
         MigLayout layout = new MigLayout(
                 "",
                 "left",
@@ -39,6 +43,11 @@ public class FilesPanel extends JPanel {
         FlatButton button1 = new FlatButton();
         button1.setIcon(UIManager.getIcon("FileView.directoryIcon"));
         button1.setToolTipText("从文件中选择");
+        button1.addActionListener(e -> {
+            if (fileChooser.showOpenDialog(Mode.OPEN_VIDEO) == JFileChooser.FILES_ONLY) {
+                textField1.setText(fileChooser.getSelectedFile().getAbsolutePath());
+            }
+        });
         this.add(button1);
 
         /* 视频源文件信息按钮 */
@@ -75,6 +84,11 @@ public class FilesPanel extends JPanel {
         FlatButton button2 = new FlatButton();
         button2.setIcon(UIManager.getIcon("FileView.directoryIcon"));
         button2.setToolTipText("从文件中选择");
+        button2.addActionListener(e -> {
+            if (fileChooser.showOpenDialog(Mode.OPEN_AUDIO) == JFileChooser.FILES_ONLY) {
+                textField2.setText(fileChooser.getSelectedFile().getAbsolutePath());
+            }
+        });
         this.add(button2);
 
         /* 音频源文件信息按钮 */
@@ -112,6 +126,11 @@ public class FilesPanel extends JPanel {
         FlatButton button3 = new FlatButton();
         button3.setIcon(UIManager.getIcon("FileView.directoryIcon"));
         button3.setToolTipText("选择输出路径");
+        button3.addActionListener(e -> {
+            if (fileChooser.showSaveDialog(Mode.SAVE_VIDEO) == JFileChooser.FILES_ONLY) {
+                textField3.setText(fileChooser.getSelectedFile().getAbsolutePath());
+            }
+        });
         this.add(button3);
     }
 }
