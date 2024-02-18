@@ -22,7 +22,7 @@ public class FileChooser extends JFileChooser {
             "mkv",
             "mkv"
     );
-    private Mode mode;
+    private FileSelectMode fileSelectMode;
     private static final JFrame fileChooserFrame = new JFrame("选择文件");
 
     public FileChooser() {
@@ -38,7 +38,7 @@ public class FileChooser extends JFileChooser {
     public File getSelectedFile() {
         File file = super.getSelectedFile();
         if (file != null
-                && this.mode == Mode.SAVE_VIDEO
+                && this.fileSelectMode == FileSelectMode.SAVE_VIDEO
                 && !file.getName().endsWith("." + this.getFileFilter().getDescription()))
         {
             file = new File(
@@ -48,12 +48,12 @@ public class FileChooser extends JFileChooser {
         return file;
     }
 
-    public int showOpenDialog(Mode mode) {
+    public int showOpenDialog(FileSelectMode mode) {
         this.setMode(mode);
         return super.showOpenDialog(fileChooserFrame);
     }
 
-    public int showSaveDialog(Mode mode) {
+    public int showSaveDialog(FileSelectMode mode) {
         this.setMode(mode);
         return super.showSaveDialog(fileChooserFrame);
     }
@@ -64,8 +64,8 @@ public class FileChooser extends JFileChooser {
         }
     }
 
-    public void setMode(Mode mode) {
-        this.mode = mode;
+    public void setMode(FileSelectMode mode) {
+        this.fileSelectMode = mode;
         switch (mode) {
             case OPEN_AUDIO -> {
                 this.removeAllFileFilter();
@@ -85,10 +85,4 @@ public class FileChooser extends JFileChooser {
             }
         }
     }
-}
-
-enum Mode {
-    OPEN_AUDIO,
-    OPEN_VIDEO,
-    SAVE_VIDEO
 }

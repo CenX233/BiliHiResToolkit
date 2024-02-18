@@ -44,7 +44,7 @@ public class FilesPanel extends JPanel {
         videoSelectButton.setIcon(UIManager.getIcon("FileView.directoryIcon"));
         videoSelectButton.setToolTipText("从文件中选择");
         videoSelectButton.addActionListener(e -> {
-            if (fileChooser.showOpenDialog(Mode.OPEN_VIDEO) == JFileChooser.FILES_ONLY) {
+            if (fileChooser.showOpenDialog(FileSelectMode.OPEN_VIDEO) == JFileChooser.FILES_ONLY) {
                 videoPathTextField.setText(fileChooser.getSelectedFile().getAbsolutePath());
             }
         });
@@ -85,7 +85,7 @@ public class FilesPanel extends JPanel {
         audioPathSelectButton.setIcon(UIManager.getIcon("FileView.directoryIcon"));
         audioPathSelectButton.setToolTipText("从文件中选择");
         audioPathSelectButton.addActionListener(e -> {
-            if (fileChooser.showOpenDialog(Mode.OPEN_AUDIO) == JFileChooser.FILES_ONLY) {
+            if (fileChooser.showOpenDialog(FileSelectMode.OPEN_AUDIO) == JFileChooser.FILES_ONLY) {
                 audioPathTextField.setText(fileChooser.getSelectedFile().getAbsolutePath());
             }
         });
@@ -127,7 +127,7 @@ public class FilesPanel extends JPanel {
         outputPathSelectButton.setIcon(UIManager.getIcon("FileView.directoryIcon"));
         outputPathSelectButton.setToolTipText("选择输出路径");
         outputPathSelectButton.addActionListener(e -> {
-            if (fileChooser.showSaveDialog(Mode.SAVE_VIDEO) == JFileChooser.FILES_ONLY) {
+            if (fileChooser.showSaveDialog(FileSelectMode.SAVE_VIDEO) == JFileChooser.FILES_ONLY) {
                 outputPathTextField.setText(fileChooser.getSelectedFile().getAbsolutePath());
             }
         });
@@ -141,20 +141,5 @@ class EncodingComboBox extends FlatComboBox<String> {
         this.addItem(EncodeMode.AUTO.toString());
         this.addItem(EncodeMode.CUSTOM.toString());
         this.setSelectedItem(mode.toString());
-    }
-}
-
-enum EncodeMode {
-    COPY("复制"),
-    AUTO("自动"),
-    CUSTOM("自定义");
-
-    private final String string;
-    EncodeMode(String s) {
-        this.string = s;
-    }
-    @Override
-    public String toString() {
-        return this.string;
     }
 }
