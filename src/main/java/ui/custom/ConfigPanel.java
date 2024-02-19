@@ -1,6 +1,7 @@
 package ui.custom;
 
 import com.formdev.flatlaf.extras.components.FlatTabbedPane;
+import ui.custom.output.OutputConfigTab;
 
 import java.awt.*;
 

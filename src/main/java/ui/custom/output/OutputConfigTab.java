@@ -1,6 +1,8 @@
-package ui.custom;
+package ui.custom.output;
 
 import com.formdev.flatlaf.extras.components.FlatScrollPane;
+import net.miginfocom.layout.CC;
+import net.miginfocom.swing.MigLayout;
 import ui.custom.CollapsePane;
 
 import javax.swing.*;
@@ -13,12 +15,19 @@ import java.awt.*;
 public class OutputConfigTab extends FlatScrollPane {
     public OutputConfigTab() {
         JPanel panel = new JPanel();
-        GridLayout layout = new GridLayout();
-        layout.setColumns(1);
+        MigLayout layout = new MigLayout();
+//        layout.setColumns(1);
         panel.setLayout(layout);
         this.setViewportView(panel);
         this.setVerticalScrollBarPolicy(VERTICAL_SCROLLBAR_ALWAYS);
 
+        BasicConfigPane basicConfigPane = new BasicConfigPane();
+        panel.add(basicConfigPane, new CC()
+                .width("97.2%")
+                .wrap()
+        );
+//
+//
         CollapsePane collapsePane = new CollapsePane();
         collapsePane.setText("封装格式设置");
         JPanel subPanel = new JPanel();
@@ -26,6 +35,8 @@ public class OutputConfigTab extends FlatScrollPane {
         subPanel.setBorder(new TitledBorder("Test border"));
         subPanel.add(label);
         collapsePane.setSubPanel(subPanel);
-        panel.add(collapsePane);
+        panel.add(collapsePane, new CC()
+                .width("97.2%")
+                .wrap());
     }
 }

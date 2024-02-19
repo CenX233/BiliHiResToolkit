@@ -27,11 +27,6 @@ public class FileChooser extends JFileChooser {
 
     public FileChooser() {
         this.setFileSelectionMode(FILES_ONLY);
-//        this.addActionListener(e -> {
-//            if (e.getActionCommand().equals(APPROVE_SELECTION)) {
-//                this.getApproveButtonMnemonic();
-//            }
-//        });
     }
 
     @Override

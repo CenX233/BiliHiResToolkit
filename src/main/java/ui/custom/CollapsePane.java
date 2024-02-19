@@ -46,10 +46,18 @@ public class CollapsePane extends JPanel {
         this.add(BorderLayout.NORTH, this.button);
     }
 
+    /**
+     * 设置展开按钮文本
+     * @param text 展开按钮文本
+     */
     public void setText(String text) {
         this.button.setText(text);
     }
 
+    /**
+     * 获取展开按钮文本
+     * @return 展开按钮文本
+     */
     public String getText() {
         return this.button.getText();
     }
