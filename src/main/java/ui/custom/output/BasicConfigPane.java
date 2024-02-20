@@ -1,7 +1,6 @@
 package ui.custom.output;
 
 import com.formdev.flatlaf.extras.components.FlatCheckBox;
-import com.formdev.flatlaf.extras.components.FlatComboBox;
 import com.formdev.flatlaf.extras.components.FlatLabel;
 import net.miginfocom.layout.CC;
 import net.miginfocom.swing.MigLayout;
