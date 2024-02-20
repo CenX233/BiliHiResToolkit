@@ -55,11 +55,11 @@ public class FilesPanel extends JPanel {
         this.add(videoSelectButton);
 
         /* 视频源文件信息按钮 */
-        FlatButton videoInfoButton = new FlatButton();
-        videoInfoButton.setText("!");
-        videoInfoButton.setToolTipText("查看源视频编码信息");
-        videoInfoButton.putClientProperty( "FlatLaf.style", "font: $h4.font" );
-        this.add(videoInfoButton);
+//        FlatButton videoInfoButton = new FlatButton();
+//        videoInfoButton.setText("!");
+//        videoInfoButton.setToolTipText("查看源视频编码信息");
+//        videoInfoButton.putClientProperty( "FlatLaf.style", "font: $h4.font" );
+//        this.add(videoInfoButton);
 
         /* “编码”文本 */
         FlatLabel videoEncodeLabel = new FlatLabel();
@@ -97,11 +97,11 @@ public class FilesPanel extends JPanel {
         this.add(audioPathSelectButton);
 
         /* 音频源文件信息按钮 */
-        FlatButton audioInfoButton = new FlatButton();
-        audioInfoButton.setText("!");
-        audioInfoButton.setToolTipText("查看源音频编码信息");
-        audioInfoButton.putClientProperty( "FlatLaf.style", "font: $h4.font" );
-        this.add(audioInfoButton);
+//        FlatButton audioInfoButton = new FlatButton();
+//        audioInfoButton.setText("!");
+//        audioInfoButton.setToolTipText("查看源音频编码信息");
+//        audioInfoButton.putClientProperty( "FlatLaf.style", "font: $h4.font" );
+//        this.add(audioInfoButton);
 
         /* “编码”文本 */
         FlatLabel audioEncodeLabel = new FlatLabel();

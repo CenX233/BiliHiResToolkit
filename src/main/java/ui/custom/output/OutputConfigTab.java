@@ -16,7 +16,6 @@ public class OutputConfigTab extends FlatScrollPane {
     public OutputConfigTab() {
         JPanel panel = new JPanel();
         MigLayout layout = new MigLayout();
-//        layout.setColumns(1);
         panel.setLayout(layout);
         this.setViewportView(panel);
         this.setVerticalScrollBarPolicy(VERTICAL_SCROLLBAR_ALWAYS);
@@ -26,17 +25,16 @@ public class OutputConfigTab extends FlatScrollPane {
                 .width("97.2%")
                 .wrap()
         );
-//
-//
-        CollapsePane collapsePane = new CollapsePane();
-        collapsePane.setText("封装格式设置");
-        JPanel subPanel = new JPanel();
-        JLabel label = new JLabel("test");
-        subPanel.setBorder(new TitledBorder("Test border"));
-        subPanel.add(label);
-        collapsePane.setSubPanel(subPanel);
-        panel.add(collapsePane, new CC()
-                .width("97.2%")
-                .wrap());
+
+//        CollapsePane collapsePane = new CollapsePane();
+//        collapsePane.setText("封装格式设置");
+//        JPanel subPanel = new JPanel();
+//        JLabel label = new JLabel("test");
+//        subPanel.setBorder(new TitledBorder("Test border"));
+//        subPanel.add(label);
+//        collapsePane.setSubPanel(subPanel);
+//        panel.add(collapsePane, new CC()
+//                .width("97.2%")
+//                .wrap());
     }
 }
