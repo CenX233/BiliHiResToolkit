@@ -8,6 +8,7 @@ import net.miginfocom.layout.CC;
 import net.miginfocom.swing.MigLayout;
 import ui.FileChooser;
 import ui.FileSelectMode;
+import ui.RemuxConfigStore;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -48,6 +49,7 @@ public class FilesPanel extends JPanel {
         videoSelectButton.addActionListener(e -> {
             if (fileChooser.showOpenDialog(FileSelectMode.OPEN_VIDEO) == JFileChooser.FILES_ONLY) {
                 videoPathTextField.setText(fileChooser.getSelectedFile().getAbsolutePath());
+                RemuxConfigStore.setVideoFile(fileChooser.getSelectedFile());
             }
         });
         this.add(videoSelectButton);
@@ -89,6 +91,7 @@ public class FilesPanel extends JPanel {
         audioPathSelectButton.addActionListener(e -> {
             if (fileChooser.showOpenDialog(FileSelectMode.OPEN_AUDIO) == JFileChooser.FILES_ONLY) {
                 audioPathTextField.setText(fileChooser.getSelectedFile().getAbsolutePath());
+                RemuxConfigStore.setAudioFile(fileChooser.getSelectedFile());
             }
         });
         this.add(audioPathSelectButton);
@@ -131,6 +134,7 @@ public class FilesPanel extends JPanel {
         outputPathSelectButton.addActionListener(e -> {
             if (fileChooser.showSaveDialog(FileSelectMode.SAVE_VIDEO) == JFileChooser.FILES_ONLY) {
                 outputPathTextField.setText(fileChooser.getSelectedFile().getAbsolutePath());
+                RemuxConfigStore.setOutputFile(fileChooser.getSelectedFile());
             }
         });
         this.add(outputPathSelectButton);
