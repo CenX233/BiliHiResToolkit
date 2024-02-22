@@ -62,17 +62,17 @@ public class FileChooser extends JFileChooser {
     public void setMode(FileSelectMode mode) {
         this.fileSelectMode = mode;
         switch (mode) {
-            case OPEN_AUDIO -> {
+            case OPEN_AUDIO: {
                 this.removeAllFileFilter();
                 this.setAcceptAllFileFilterUsed(true);
                 this.setFileFilter(AUDIO_FILE_FILTER);
             }
-            case OPEN_VIDEO -> {
+            case OPEN_VIDEO: {
                 this.removeAllFileFilter();
                 this.setAcceptAllFileFilterUsed(true);
                 this.setFileFilter(VIDEO_FILE_FILTER);
             }
-            case SAVE_VIDEO -> {
+            case SAVE_VIDEO: {
                 this.removeAllFileFilter();
                 this.setAcceptAllFileFilterUsed(false);
                 this.addChoosableFileFilter(MKV_FILE_FILTER);
