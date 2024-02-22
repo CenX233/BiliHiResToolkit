@@ -22,8 +22,8 @@ public class BetterFormatter extends Formatter {
         sb.append("[");
         sb.append(formatter.format(LocalDateTime.ofInstant(Instant.ofEpochMilli(record.getMillis()), ZoneId.systemDefault())));
         sb.append("] [");
-        sb.append(record.getLongThreadID());
-        sb.append("|");
+//        sb.append(record.getLongThreadID());
+//        sb.append("|");
         sb.append(record.getLoggerName());
         sb.append("|");
         sb.append(record.getLevel().getLocalizedName());

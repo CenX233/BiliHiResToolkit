@@ -10,10 +10,14 @@ repositories {
 }
 
 dependencies {
-    // https://mvnrepository.com/artifact/org.apache.commons/commons-exec
     implementation("org.apache.commons:commons-exec:1.4.0")
-    // https://mvnrepository.com/artifact/org.jetbrains/annotations
+
     implementation("org.jetbrains:annotations:24.1.0")
+
+    implementation("com.formdev:flatlaf:3.3")
+    implementation("com.formdev:flatlaf-extras:3.3")
+    implementation("com.miglayout:miglayout-core:11.3")
+    implementation("com.miglayout:miglayout-swing:11.3")
 
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
